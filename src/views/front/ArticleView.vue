@@ -151,7 +151,7 @@ onMounted(async () => {
   font-family: 'Openhuninn', sans-serif
 
 .margin-auto
-  margin:auto
+  margin: auto
 
 // .parent
 //   position: relative

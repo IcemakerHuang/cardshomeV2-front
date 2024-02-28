@@ -1,6 +1,6 @@
 <template>
 <!-- 導覽列 -->
-<VAppBar color="white" class="custom-font">
+<VAppBar color="white" class="custom-font box-shadow">
   <VContainer class="d-flex align-center">
     <div class="logo ml-6">
       <v-img src="https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/logo/logo_v2.png"  contain aspect-ratio="1"></v-img>
@@ -29,7 +29,7 @@
       <v-badge color="error" :content="user.cart" v-if="item.to === '/cart'" floating></v-badge>
     </VBtn>
   </template>
-  <VBtn v-if="!user.isLogin" to="/login" prepend-icon="mdi-login" class="rounded-pill bg-pink-lighten-2" color="black">登入
+  <VBtn v-if="!user.isLogin" prepend-icon="mdi-login" class="rounded-pill bg-pink-lighten-2" color="black">登入
     <!-- v-if="!user.isLogin" @click="logout" -->
     <v-dialog
       v-model="dialog"
@@ -93,8 +93,8 @@ const navItems = computed(() => [
   // { to: '/login', text: '登入', icon: 'mdi-login', show: !user.isLogin },
   // { to: '/register', text: '註冊', icon: 'mdi-account-plus', show: !user.isLogin },
   // 購物車、訂單和管理按鈕只在用戶已登入時顯示
-  { to: '/cart', text: '購物車', icon: 'mdi-cart', show: user.isLogin },
-  { to: '/orders', text: '訂單', icon: 'mdi-list-box', show: user.isLogin },
+  { to: '/cart', text: '待辦認同卡', icon: 'mdi-cart', show: user.isLogin },
+  { to: '/orders', text: '我的認同卡', icon: 'mdi-list-box', show: user.isLogin },
   { to: '/admin', text: '管理', icon: 'mdi-cog', show: user.isLogin && user.isAdmin }
 ])
 
@@ -155,4 +155,12 @@ const logout = async () => {
 
 .custom-font
   font-family: 'Openhuninn', sans-serif
+
+.box-shadow-x
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1)
+  transition: box-shadow 0.3s ease
+  &:hover
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3)
+.box-shadow
+  box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 10%)
 </style>
