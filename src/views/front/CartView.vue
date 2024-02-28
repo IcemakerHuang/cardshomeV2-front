@@ -1,7 +1,7 @@
 <template lang="pug">
 VContainer
   VCol(cols="12")
-    h1 購物車
+    h1 認同卡選取清單
   VDivider
   VCol(cols="12")
     //- 表格呈現
@@ -18,7 +18,7 @@ VContainer
   VCol.text-center(cols="12")
     p 總金額: {{ total }}
     //- 結帳按鈕
-    VBtn(color="green" :disabled="!canCheckout" :loading="isSubmitting" @click="checkout") 結帳
+    VBtn(color="green" :disabled="!canCheckout" :loading="isSubmitting" @click="checkout") 儲存
 </template>
 
 <script setup>

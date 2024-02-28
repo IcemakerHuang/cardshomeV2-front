@@ -1,10 +1,9 @@
 <template>
-<v-container class="custom-font html-body">
-  <!-- 首頁輪播 -->
+<div>
   <v-row>
     <v-carousel
       cycle
-      height="400"
+      height="100%"
       hide-delimiter-background
       show-arrows="hover"
     >
@@ -16,12 +15,15 @@
       >
         <div class="d-flex fill-height justify-center align-center">
           <div class="text-h2">
-            {{ slides[i] }} Slide
+
           </div>
         </div>
       </v-carousel-item>
     </v-carousel>
   </v-row>
+</div>
+<v-container class="custom-font html-body">
+  <!-- 首頁輪播 -->
   <!-- 認同卡列表 -->
   <v-row>
     <v-col cols="12">
@@ -44,23 +46,28 @@
   </v-row>
 </v-container>
 <!-- 頁尾 -->
-<v-footer class="d-flex flex-column ma-0 pa-0">
-  <div class="bg-teal d-flex w-100 align-center px-4">
-    <strong>Get connected with us on social networks!</strong>
-      <v-spacer></v-spacer>
-    <v-btn
-      v-for="icon in icons"
-      :key="icon"
-      class="mx-4"
-      :icon="icon"
-      variant="plain"
-      size="small"
-    ></v-btn>
-  </div>
-  <div class="px-4 py-2 text-center w-100 F15946 font-white">
-    {{ new Date().getFullYear() }} — <strong>Copyright ©  IcemakerDesign. All rights reserved.</strong>
-  </div>
-</v-footer>
+<v-footer
+    class="footer-bg text-center d-flex flex-column mt-6"
+  >
+    <div>
+      <v-btn
+        v-for="icon in icons"
+        :key="icon"
+        class="mx-4"
+        :icon="icon"
+        variant="text"
+      ></v-btn>
+    </div>
+
+    <div class="pt-0">
+    </div>
+
+    <v-divider></v-divider>
+
+    <div>
+      {{ new Date().getFullYear() }} — <strong>Copyright ©  IcemakerDesign. All rights reserved.</strong>
+    </div>
+  </v-footer>
 </template>
 
 <script setup>
@@ -127,7 +134,7 @@ onMounted(async () => {
 // 使用 ref 創建響應式變量
 const items = ref([
   {
-    src: 'https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/Carousel/NPOCreditCard.jpg'
+    src: 'https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/Carousel/School%20Affinity%20Card_KV.jpg'
   },
   {
     src: 'https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/Carousel/2019041204_03.jpg'
@@ -136,7 +143,7 @@ const items = ref([
     src: 'https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/Carousel/KV_1366x430.jpg'
   },
   {
-    src: 'https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/Carousel/CTBCNPO2.jpg'
+    src: 'https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/Carousel/lowcarboncard-KV.jpg'
   }
 ])
 const slides = ref([
@@ -165,4 +172,6 @@ const slides = ref([
   background-color:#F15946
 .font-white
   color: white
+.footer-bg
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%)
 </style>

@@ -23,12 +23,11 @@
       <div v-html="description" class="text-overflow"></div>
     </v-card-text>
     <v-card-actions>
-      <v-btn color="primary" prepend-icon="mdi-cards-playing-outline" @click="addCart">
-        我想申辦
+      <v-btn color="primary" prepend-icon="mdi-book-open-blank-variant" @click="addCart">
+        閱讀文章
       </v-btn>
-      <v-btn value="favorites">
-        <v-icon>mdi-heart</v-icon>
-        <span>Favorites</span>
+      <v-btn class="text-caption">
+        {{ new Date(date).toLocaleString() }}
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -45,7 +44,7 @@ const user = useUserStore() // 取使用者資料 pinia
 const createSnackbar = useSnackbar()
 const router = useRouter()
 
-const props = defineProps(['_id', 'category', 'description', 'image', 'title', 'author', 'sell'])
+const props = defineProps(['_id', 'category', 'description', 'image', 'title', 'author', 'sell', 'date'])
 
 const addCart = async () => {
   if (!user.isLogin) { // 如果沒有登入

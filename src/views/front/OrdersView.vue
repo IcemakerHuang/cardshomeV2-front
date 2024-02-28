@@ -2,7 +2,7 @@
 VContainer
   VRow
     VCol(cols="12")
-      h1 訂單
+      h1 我的認同卡
     VCol(cols="12")
       VDataTable(:items="orders" :headers="headers")
         template(#[`item.createdAt`]="{ item }")

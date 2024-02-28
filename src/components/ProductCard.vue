@@ -16,17 +16,16 @@
     </v-card-subtitle> -->
     <v-card-text style="white-space: pre;" >
       <div class="text-overflow ma-1">{{ description }}</div>
-
     </v-card-text>
     <v-card-actions class="justify-space-between">
       <v-btn color="primary" prepend-icon="mdi-cards-playing-outline" @click="addCart">
         我想申辦
       </v-btn>
-      <v-btn value="favorites" color="pink">
+      <!-- <v-btn value="favorites" color="pink">
         <v-icon>mdi-heart</v-icon>
         <span></span>
         加入收藏
-      </v-btn>
+      </v-btn> -->
     </v-card-actions>
   </v-card>
 </template>

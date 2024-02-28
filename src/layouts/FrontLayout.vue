@@ -1,9 +1,9 @@
 <template>
 <!-- 導覽列 -->
-<VAppBar color="white" class="custom-font box-shadow">
+<VAppBar color="white" class="custom-font box-shadow-x">
   <VContainer class="d-flex align-center">
     <div class="logo ml-6">
-      <v-img src="https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/logo/logo_v2.png"  contain aspect-ratio="1"></v-img>
+      <v-img src="https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/logo/football-card_12776294.png"  contain aspect-ratio="1"></v-img>
     </div>
     <VBtn to="/" :active="false" color="orange">
       <VAppBarTitle class="logo-title">卡底家 Cardshome</VAppBarTitle>
@@ -29,7 +29,7 @@
       <v-badge color="error" :content="user.cart" v-if="item.to === '/cart'" floating></v-badge>
     </VBtn>
   </template>
-  <VBtn v-if="!user.isLogin" prepend-icon="mdi-login" class="rounded-pill bg-pink-lighten-2" color="white">登入
+  <VBtn v-if="!user.isLogin" to="/login" prepend-icon="mdi-login" class="rounded-pill bg-pink-lighten-2" color="white">登入
     <!-- v-if="!user.isLogin" @click="logout" -->
     <v-dialog
       v-model="dialog"
@@ -131,8 +131,8 @@ const logout = async () => {
 
 <style scoped lang="sass">
 .logo
-  width: 50px
-  height: 50px
+  width: 30px
+  height: 30px
 .logo-title
   font-size: 25px
   font-weight: bold
