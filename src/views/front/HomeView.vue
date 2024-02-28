@@ -130,21 +130,21 @@ const items = ref([
     src: 'https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/Carousel/NPOCreditCard.jpg'
   },
   {
+    src: 'https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/Carousel/2019041204_03.jpg'
+  },
+  {
+    src: 'https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/Carousel/KV_1366x430.jpg'
+  },
+  {
     src: 'https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/Carousel/CTBCNPO2.jpg'
-  },
-  {
-    src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
-  },
-  {
-    src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
   }
 ])
 const slides = ref([
-  'First',
-  'Second',
-  'Third',
-  'Fourth',
-  'Fifth'
+  '',
+  '',
+  '',
+  '',
+  ''
 ])
 </script>
 

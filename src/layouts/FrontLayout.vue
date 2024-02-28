@@ -29,7 +29,7 @@
       <v-badge color="error" :content="user.cart" v-if="item.to === '/cart'" floating></v-badge>
     </VBtn>
   </template>
-  <VBtn v-if="!user.isLogin" prepend-icon="mdi-login" class="rounded-pill bg-pink-lighten-2" color="black">登入
+  <VBtn v-if="!user.isLogin" prepend-icon="mdi-login" class="rounded-pill bg-pink-lighten-2" color="white">登入
     <!-- v-if="!user.isLogin" @click="logout" -->
     <v-dialog
       v-model="dialog"
