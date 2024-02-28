@@ -16,7 +16,7 @@
     <VBtn to="/allproductView" :active="false" class="rounded-pill">
       <VAppBarTitle class="nav-title">認同卡</VAppBarTitle>
     </VBtn>
-    <VBtn to="/" :active="false" class="rounded-pill">
+    <VBtn to="/allarticleView" :active="false" class="rounded-pill">
       <VAppBarTitle class="nav-title">資訊文章</VAppBarTitle>
     </VBtn>
   </VContainer>
@@ -24,7 +24,7 @@
   <!-- 電腦版導覽列 -->
   <!-- 根據用戶登入狀態動態顯示導航項目 -->
   <template v-for="item in navItems" >
-    <VBtn :to="item.to" :prepend-icon="item.icon" v-if="item.show" :key="item.to" color="black">{{ item.text }}
+    <VBtn :to="item.to" :prepend-icon="item.icon" v-if="item.show" :key="item.to" color="black" class="rounded-pill">{{ item.text }}
       <!-- 購物車數量標籤 -->
       <v-badge color="error" :content="user.cart" v-if="item.to === '/cart'" floating></v-badge>
     </VBtn>
@@ -167,7 +167,7 @@ const logout = async () => {
 
 .rounded-pill
   &:hover
-    background-color: #F8BBD0
+    background-color: #EC407A
     color: #fff !important
 .transparent-50
   transparent: 50%

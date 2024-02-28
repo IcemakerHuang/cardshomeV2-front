@@ -58,6 +58,16 @@ const routes = [
         }
       },
       {
+        path: 'allarticleView',
+        name: 'AllarticleView',
+        component: () => import('@/views/front/AllarticleView.vue'),
+        meta: {
+          title: '卡底家 | 所有文章',
+          login: false,
+          admin: false
+        }
+      },
+      {
         path: 'articles/:id',
         name: 'Article',
         component: () => import('@/views/front/ArticleView.vue'),
