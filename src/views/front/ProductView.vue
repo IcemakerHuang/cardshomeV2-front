@@ -1,18 +1,31 @@
 <template lang="pug">
-VContainer
+VContainer(class="custom-font")
   VRow
     VCol(cols="12")
-      h1 {{ product.name }}
+      h1 請選取認同卡數量:
+  VRow
     VCol(cols="12" md="6")
-      VImg(:src="product.image")
+      v-skeleton-loader(:elevation="24" type="image" class="mx-auto border rounded-lg")
+        VImg(:src="product.image")
+    v-divider(vertical)
     VCol(cols="12" md="6")
-      p ${{ product.price }}
-      p(style="white-space: pre;") {{ product.description }}
-      //- 購物車數量
-      //- isSubmitting 送出的時候，讓按鈕變成 loading 載入狀態 -> 表單會被禁用，防止重複提交。
-      VForm(:disabled="isSubmitting" @submit.prevent="submit")
-        VTextField(type="number" min="0" v-model.number="quantity.value.value" :error-messages="quantity.errorMessage.value")
-        VBtn(type="submit" prepend-icon="mdi-cart" :loading="isSubmitting") 加入購物車
+      VCol(cols="12")
+        h1 {{ product.name }}
+        h3 預計申辦費用: ${{ product.price }}
+        p(class="text-caption") 備註：0元為免費申辦的認同卡，請選擇數量後，點選加入申辦清單。
+      v-divider(color="success" inset)
+      VCol(cols="12" class="pa-6")
+        p(style="white-space: pre;") {{ product.description }}
+      v-divider(color="success" inset)
+      VCol(cols="12")
+        //- 購物車數量
+        //- isSubmitting 送出的時候，讓按鈕變成 loading 載入狀態 -> 表單會被禁用，防止重複提交。
+        VForm(:disabled="isSubmitting" @submit.prevent="submit")
+          VRow
+            VCol(cols="6")
+              VTextField(type="number" min="0" v-model.number="quantity.value.value" :error-messages="quantity.errorMessage.value")
+            VCol(cols="6")
+              VBtn(type="submit" prepend-icon="mdi-cards" :loading="isSubmitting") 加入申辦清單
 //- 商品已下架的呈現
 VOverlay.align-center.justify-center.text-center(:model-value="!product.sell" persistent)
   h1.text-red.text-h1 已下架
@@ -121,3 +134,23 @@ onMounted(async () => {
   }
 })
 </script>
+<style scoped lang="sass">
+.product-card
+  opacity: 0
+.product-card
+  opacity: 0
+
+@font-face
+  font-family: 'Openhuninn'
+  src: url('@/assets/jf-openhuninn-2.0.ttf') format('truetype')
+
+.custom-font
+  font-family: 'Openhuninn', sans-serif
+
+.F15946
+  background-color:#F15946
+.font-white
+  color: white
+.footer-bg
+  background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%)
+</style>

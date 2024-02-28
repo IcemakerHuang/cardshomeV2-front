@@ -54,12 +54,12 @@
         </VCardText>
         <v-card-actions>
           <!-- 關閉視窗按鈕 -->
-          <VBtn class="custom-font" color="red" text @click="dialog = false">關閉</VBtn>
+          <VBtn class="custom-font rounded-pill" color="red" text @click="dialog = false" prepend-icon="mdi-arrow-right-thin">關閉</VBtn>
         </v-card-actions>
       </v-card>
     </v-dialog>
   </VBtn>
-  <VBtn prepend-icon="mdi-logout" v-if="user.isLogin" @click="logout" color="black" class="rounded-pill">登出</VBtn>
+  <VBtn prepend-icon="mdi-logout" v-if="user.isLogin" @click="logout" color="white" class="rounded-pill bg-pink-lighten-1">登出</VBtn>
 </VAppBar>
 <!-- 頁面內容 -->
 <VMain>
