@@ -10,6 +10,28 @@
     </v-col>
   </v-row>
 </v-container>
+<v-footer
+  class="footer-bg text-center d-flex flex-column mt-6 custom-font"
+>
+  <div>
+    <v-btn
+      v-for="icon in icons"
+      :key="icon"
+      class="mx-4"
+      :icon="icon"
+      variant="text"
+    ></v-btn>
+  </div>
+
+  <div class="pt-0">
+  </div>
+
+  <v-divider></v-divider>
+
+  <div>
+    {{ new Date().getFullYear() }} — <strong>Copyright ©  IcemakerDesign. All rights reserved.</strong>
+  </div>
+</v-footer>
 </template>
 
 <script setup>
@@ -76,23 +98,38 @@ const slides = ref([
   'Fourth',
   'Fifth'
 ])
+
+const icons = ref([
+  'mdi-facebook',
+  'mdi-twitter',
+  'mdi-linkedin',
+  'mdi-instagram'
+])
+
 </script>
 
-  <style scoped lang="sass">
-  .product-card
-    opacity: 0
-  .product-card
-    opacity: 0
+<style scoped lang="sass">
+.product-card
+  opacity: 0
+.product-card
+  opacity: 0
 
-  @font-face
-    font-family: 'Openhuninn'
-    src: url('@/assets/jf-openhuninn-2.0.ttf') format('truetype')
+@font-face
+  font-family: 'Openhuninn'
+  src: url('@/assets/jf-openhuninn-2.0.ttf') format('truetype')
 
-  .custom-font
-    font-family: 'Openhuninn', sans-serif
+.custom-font
+  font-family: 'Openhuninn', sans-serif
 
-  .F15946
-    background-color:#F15946
-  .font-white
-    color: white
-  </style>
+.F15946
+  background-color:#F15946
+.font-white
+  color: white
+
+.F15946
+  background-color:#F15946
+.font-white
+  color: white
+.footer-bg
+  background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%)
+</style>

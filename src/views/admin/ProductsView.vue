@@ -7,7 +7,7 @@ VContainer.custom-font
       h1.text-center 商品管理
     VDivider
     VCol(cols="12")
-      VBtn(color="green" @click="openDialog()") 新增商品
+      VBtn(color="green" @click="openDialog()") 新增你的認同卡
     VCol(cols="12")
       //- 表格呈現
       VDataTableServer(
@@ -43,7 +43,7 @@ VDialog(v-model="dialog" persistent width="500px" class="custom-font")
   //- 用VForm把卡片包起來
   VForm(:disabled="isSubmitting" @submit.prevent="submit")
     VCard
-      VCardTitle {{ dialogId === '' ? '新增商品' : '編輯商品' }}
+      VCardTitle {{ dialogId === '' ? '新增卡頁' : '編輯卡頁' }}
       //- 以下輸入欄位
       VCardText
         VTextField(
@@ -52,7 +52,7 @@ VDialog(v-model="dialog" persistent width="500px" class="custom-font")
           :error-messages="name.errorMessage.value"
         )
         VTextField(
-          label="價格"
+          label="費用"
           type="number" min="0"
           v-model="price.value.value"
           :error-messages="price.errorMessage.value"

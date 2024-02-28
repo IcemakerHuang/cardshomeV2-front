@@ -1,5 +1,5 @@
 <template lang="pug">
-VContainer
+VContainer(class="custom-font")
   VCol(cols="12")
     h1 認同卡選取清單
   VDivider
@@ -16,9 +16,9 @@ VContainer
       template(#[`item.action`]="{ item }")
         VBtn(variant="text" icon="mdi-delete" color="red" @click="addCart(item.product._id, item.quantity * -1)")
   VCol.text-center(cols="12")
-    p 總金額: {{ total }}
+    p 所有卡面合計費用: {{ total }}
     //- 結帳按鈕
-    VBtn(color="green" :disabled="!canCheckout" :loading="isSubmitting" @click="checkout") 儲存
+    VBtn(color="pink-lighten-2" :disabled="!canCheckout" :loading="isSubmitting" @click="checkout") 儲存
 </template>
 
 <script setup>
@@ -141,4 +141,14 @@ onMounted(async () => {
     })
   }
 })
+
 </script>
+
+<style scoped lang="sass">
+@font-face
+  font-family: 'Openhuninn'
+  src: url('@/assets/jf-openhuninn-2.0.ttf') format('truetype')
+
+.custom-font
+  font-family: 'Openhuninn', sans-serif
+</style>

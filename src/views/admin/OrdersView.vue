@@ -2,7 +2,7 @@
 VContainer.custom-font
   VRow
     VCol(cols="12")
-      h1 訂單
+      h1 申辦認同卡列表
     VCol(cols="12")
       VDataTable(:items="orders" :headers="headers")
         template(#[`item.createdAt`]="{ item }")
@@ -23,12 +23,12 @@ const createSnackbar = useSnackbar()
 
 const orders = ref([])
 const headers = [
-  { title: '訂單編號', key: '_id' },
+  { title: '編號', key: '_id' },
   { title: '帳號', key: 'user.account' },
   { title: '日期', key: 'createdAt' },
-  { title: '商品', key: 'cart', sortable: false },
+  { title: '認同卡', key: 'cart', sortable: false },
   {
-    title: '金額',
+    title: '費用',
     key: 'price',
     value: (item) => {
       return item.cart.reduce((total, current) => {

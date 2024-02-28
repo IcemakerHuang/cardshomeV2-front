@@ -10,14 +10,14 @@
     </VBtn>
   </VContainer>
   <VContainer class="d-flex flex-row-reverse">
-    <VBtn to="/" :active="false" class="rounded-pill">
+    <!-- <VBtn to="/" :active="false" class="rounded-pill">
       <VAppBarTitle class="nav-title">論壇</VAppBarTitle>
-    </VBtn>
+    </VBtn> -->
     <VBtn to="/allproductView" :active="false" class="rounded-pill">
       <VAppBarTitle class="nav-title">認同卡</VAppBarTitle>
     </VBtn>
     <VBtn to="/" :active="false" class="rounded-pill">
-      <VAppBarTitle class="nav-title">討論區</VAppBarTitle>
+      <VAppBarTitle class="nav-title">資訊文章</VAppBarTitle>
     </VBtn>
   </VContainer>
   <VSpacer></VSpacer>
@@ -35,15 +35,15 @@
       v-model="dialog"
       activator="parent"
       width="auto"
-      class="rounded-xl"
+      class="elevation-24"
     >
-      <v-card min-width="600">
+      <v-card min-width="600" class="rounded-xl ">
         <v-tabs
           v-model="tab"
-          bg-color="primary"
+          bg-color="pink-lighten-2"
         >
-          <v-tab value="one">登入</v-tab>
-          <v-tab value="two">註冊</v-tab>
+          <v-tab class="custom-font" value="one">登入</v-tab>
+          <v-tab class="custom-font" value="two">註冊</v-tab>
         </v-tabs>
 
         <VCardText>
@@ -54,7 +54,7 @@
         </VCardText>
         <v-card-actions>
           <!-- 關閉視窗按鈕 -->
-          <VBtn color="red" text @click="dialog = false">關閉</VBtn>
+          <VBtn class="custom-font" color="red" text @click="dialog = false">關閉</VBtn>
         </v-card-actions>
       </v-card>
     </v-dialog>

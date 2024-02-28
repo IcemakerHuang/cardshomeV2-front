@@ -4,19 +4,22 @@
       <VCol cols="12">
         <h1 class="text-center">個人資料</h1>
       </VCol>
-      <VCard width="800px" style="padding-left: 30px; padding-top: 15px; ">
-        <VRow>
-          <VCol cols="4">
-            <VImg class="avatar" :src="user.avatar" style="height: 150px; width: 150px;"></VImg>
+      <VCard width="500px" style="padding-left: 30px; padding-top: 15px; " class="rounded-xl elevation-24">
+        <VRow class="d-flex justify-center align-center">
+          <VCol cols="12" class="d-flex justify-center align-center">
+            <div class="rounded-xl elevation-14">
+              <VImg class="avatar" :src="user.avatar" style="height: 150px; width: 150px; background: cover;"></VImg>
+            </div>
           </VCol>
-          <VCol cols="8" style="display: flex; justify-content: end;">
-            <VIcon color="primary" size="40px" style="margin-right: 20px;" @click="openEditDialog">mdi-pencil</VIcon>
+          <VCol cols="12" style="display: flex; justify-content: end;" class="d-flex justify-center align-center">
+            <v-btn @click="openEditDialog">編輯個人資料</v-btn>
+            <!-- <VIcon color="pink-darken-1" size="25px" style="margin-right: 20px;" @click="openEditDialog">mdi-account-edit</VIcon> -->
           </VCol>
         </VRow>
-        <VRow>
-          <VCol cols="4">
+        <VRow class="d-flex justify-center align-center">
+          <VCol cols="6">
             <VCardText v-for="item in title" :key="item.text">
-              <VIcon>{{ item.icon }}</VIcon>
+              <VIcon color="pink-darken-3">{{ item.icon }}</VIcon>
               {{ item.text }}
             </VCardText>
           </VCol>
@@ -37,17 +40,17 @@
         <VCardTitle>{{ '編輯個人資料' }}</VCardTitle>
         <VCardText>
           <VTextField
-          label="帳號"
+          label="個人帳號："
           v-model="account.value.value"
           :error-messages="account.errorMessage.value"
           ></VTextField>
           <VTextField
-          label="信箱"
+          label="電子信箱："
           v-model="email.value.value"
           :error-messages="email.errorMessage.value"
           ></VTextField>
           <VTextField
-          label="手機"
+          label="我的手機："
           v-model="phone.value.value"
           :error-messages="phone.errorMessage.value"
           ></VTextField>
@@ -84,9 +87,9 @@ const user = useUserStore()
 const editdialog = ref(false)
 
 const title = [
-  { icon: 'mdi-account', text: '帳號' },
-  { icon: 'mdi-email', text: '信箱' },
-  { icon: 'mdi-cellphone', text: '手機' }
+  { icon: 'mdi-account', text: '個人帳號：' },
+  { icon: 'mdi-email', text: '電子信箱：' },
+  { icon: 'mdi-cellphone', text: '我的手機：' }
 ]
 
 const info = computed(() => [

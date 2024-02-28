@@ -1,8 +1,8 @@
 <template lang="pug">
-VContainer
+VContainer(class="custom-font")
   VRow
     VCol(cols="12")
-      h1 我的認同卡
+      h1 我的認同卡紀錄
     VCol(cols="12")
       VDataTable(:items="orders" :headers="headers")
         template(#[`item.createdAt`]="{ item }")
@@ -23,11 +23,11 @@ const createSnackbar = useSnackbar()
 
 const orders = ref([])
 const headers = [
-  { title: '訂單編號', key: '_id' },
+  { title: '申辦編號', key: '_id' },
   { title: '日期', key: 'createdAt' },
-  { title: '商品', key: 'cart', sortable: false },
+  { title: '卡面', key: 'cart', sortable: false },
   {
-    title: '金額',
+    title: '費用',
     key: 'price',
     value: (item) => {
       return item.cart.reduce((total, current) => {
@@ -55,3 +55,12 @@ onMounted(async () => {
   }
 })
 </script>
+
+<style scoped lang="sass">
+@font-face
+  font-family: 'Openhuninn'
+  src: url('@/assets/jf-openhuninn-2.0.ttf') format('truetype')
+
+.custom-font
+  font-family: 'Openhuninn', sans-serif
+</style>
