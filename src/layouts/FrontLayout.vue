@@ -35,6 +35,7 @@
       v-model="dialog"
       activator="parent"
       width="auto"
+      class="rounded-xl"
     >
       <v-card min-width="600">
         <v-tabs
