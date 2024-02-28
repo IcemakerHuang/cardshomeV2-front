@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="custom-font">
     <v-row>
       <v-col cols="12">
         <h1 class="text-center">文章管理</h1>
@@ -362,3 +362,12 @@ const tableApplySearch = () => {
 }
 
 </script>
+
+<style scoped lang="sass">
+@font-face
+  font-family: 'Openhuninn'
+  src: url('@/assets/jf-openhuninn-2.0.ttf') format('truetype')
+
+.custom-font
+  font-family: 'Openhuninn', sans-serif
+</style>

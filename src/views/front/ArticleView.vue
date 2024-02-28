@@ -1,10 +1,10 @@
 <template lang="pug">
 VContainer(class="custom-fon")
   VRow(class="custom-font d-flex justify-center align-center")
-    VCol(cols="2")
-    VCol(cols="8")
+    VCol(cols="1")
+    VCol(cols="10")
       h1 {{ article.title }}
-    VCol(cols="2")
+    VCol(cols="1")
 VRow(class="ma-0 pa-0")
   VCol(cols="12")
     //- VImg(:src="article.image")
@@ -16,20 +16,20 @@ VRow(class="ma-0 pa-0")
             img(v-if="slide" :src="slide")
 VContainer(class="custom-font mb-6")
   VRow
-    VCol(cols="2")
-    VCol(cols="4")
+    VCol(cols="1")
+    VCol(cols="5")
       p 作者：{{ article.author }}
-    VCol(cols="4")
+    VCol(cols="5")
       //- p {{ article.date.toLocaleString() }}
       p {{ new Date(article.date).toLocaleString() }}
-    VCol(cols="2")
+    VCol(cols="1")
   VRow
-    VCol(cols="2")
-    VCol(cols="8")
+    VCol(cols="1")
+    VCol(cols="10")
       Div(class="d-flex justify-center align-center mb-6")
         //- p(style="white-space: pre-line;") {{ article.description }}
         Div(v-html="article.description")
-    VCol(cols="2")
+    VCol(cols="1")
 //- 商品已下架的呈現
 VOverlay.align-center.justify-center.text-center(:model-value="!article.sell" persistent)
   h1.text-red.text-h1 已下架

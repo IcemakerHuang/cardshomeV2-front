@@ -1,5 +1,5 @@
 <template lang="pug">
-VContainer
+VContainer.custom-font
   VRow
     VCol(cols="12")
       h1 訂單
@@ -56,3 +56,12 @@ onMounted(async () => {
   }
 })
 </script>
+
+<style scoped lang="sass">
+@font-face
+  font-family: 'Openhuninn'
+  src: url('@/assets/jf-openhuninn-2.0.ttf') format('truetype')
+
+.custom-font
+  font-family: 'Openhuninn', sans-serif
+</style>

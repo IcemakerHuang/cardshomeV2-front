@@ -1,7 +1,7 @@
 <!-- 本頁用途：後台商品管理頁 -->
 <!-- 這裡有用到：簡單的對話筐式表單，去建商品資訊 -->
 <template lang="pug">
-VContainer
+VContainer.custom-font
   VRow
     VCol(cols="12")
       h1.text-center 商品管理
@@ -39,7 +39,7 @@ VContainer
         template(#[`item.edit`]="{ item }")
           VBtn(icon="mdi-pencil" variant="text" color="blue" @click="openDialog(item)")
 //-  VDialog(v-model="dialog" persistent讓在對話筐下，點外面不會自動關閉 width="500px")
-VDialog(v-model="dialog" persistent width="500px")
+VDialog(v-model="dialog" persistent width="500px" class="custom-font")
   //- 用VForm把卡片包起來
   VForm(:disabled="isSubmitting" @submit.prevent="submit")
     VCard
@@ -303,3 +303,12 @@ const tableApplySearch = () => {
   tableLoadItems()
 }
 </script>
+
+<style scoped lang="sass">
+@font-face
+  font-family: 'Openhuninn'
+  src: url('@/assets/jf-openhuninn-2.0.ttf') format('truetype')
+
+.custom-font
+  font-family: 'Openhuninn', sans-serif
+</style>

@@ -47,7 +47,7 @@
 </v-container>
 <!-- 頁尾 -->
 <v-footer
-    class="footer-bg text-center d-flex flex-column mt-6"
+    class="footer-bg text-center d-flex flex-column mt-6 custom-font"
   >
     <div>
       <v-btn
@@ -112,9 +112,9 @@ onMounted(async () => {
     articles.value.push(...articlesData.result.data)
 
     await nextTick()
-    gsap // 商品卡做動畫效果
-      .to('.product-card', { opacity: 1, duration: 0.5 })
-      .to('.article-card', { opacity: 1, duration: 0.5 })
+    // 商品卡做動畫效果
+    gsap.to('.product-card', { opacity: 1, duration: 0.5 })
+    gsap.to('.article-card', { opacity: 1, duration: 0.5 })
   } catch (error) {
     console.log(error)
     const text = error?.response?.data?.message || '發生錯誤，請稍後再試'
@@ -173,5 +173,5 @@ const slides = ref([
 .font-white
   color: white
 .footer-bg
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%)
+  background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%)
 </style>

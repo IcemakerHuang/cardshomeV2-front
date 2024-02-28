@@ -1,5 +1,5 @@
 <template>
-  <VContainer>
+  <VContainer class="custom-font">
     <VRow style="display: flex; justify-content: center;">
       <VCol cols="12">
         <h1 class="text-center">個人資料</h1>
@@ -31,7 +31,7 @@
       </VCard>
     </VRow>
   </VContainer>
-  <VDialog v-model="editdialog">
+  <VDialog v-model="editdialog" class="custom-font">
     <VForm :disabled="isSubmitting" @submit.prevent="submit">
       <VCard>
         <VCardTitle>{{ '編輯個人資料' }}</VCardTitle>
@@ -182,4 +182,14 @@ const submit = handleSubmit(async (values) => {
 .avatar:hover {
   cursor: pointer;
 }
+
+</style>
+
+<style scoped lang="sass">
+@font-face
+  font-family: 'Openhuninn'
+  src: url('@/assets/jf-openhuninn-2.0.ttf') format('truetype')
+
+.custom-font
+  font-family: 'Openhuninn', sans-serif
 </style>

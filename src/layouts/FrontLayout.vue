@@ -1,6 +1,6 @@
 <template>
 <!-- 導覽列 -->
-<VAppBar color="white" class="custom-font box-shadow-x">
+<VAppBar color="white" class="custom-font box-shadow elevation-8 transparent-50">
   <VContainer class="d-flex align-center">
     <div class="logo ml-6">
       <v-img src="https://raw.githubusercontent.com/IcemakerHuang/cardshome_data/main/logo/football-card_12776294.png"  contain aspect-ratio="1"></v-img>
@@ -10,13 +10,13 @@
     </VBtn>
   </VContainer>
   <VContainer class="d-flex flex-row-reverse">
-    <VBtn to="/" :active="false">
+    <VBtn to="/" :active="false" class="rounded-pill">
       <VAppBarTitle class="nav-title">論壇</VAppBarTitle>
     </VBtn>
-    <VBtn to="/allproductView" :active="false">
+    <VBtn to="/allproductView" :active="false" class="rounded-pill">
       <VAppBarTitle class="nav-title">認同卡</VAppBarTitle>
     </VBtn>
-    <VBtn to="/" :active="false">
+    <VBtn to="/" :active="false" class="rounded-pill">
       <VAppBarTitle class="nav-title">討論區</VAppBarTitle>
     </VBtn>
   </VContainer>
@@ -58,7 +58,7 @@
       </v-card>
     </v-dialog>
   </VBtn>
-  <VBtn prepend-icon="mdi-logout" v-if="user.isLogin" @click="logout" color="black">登出</VBtn>
+  <VBtn prepend-icon="mdi-logout" v-if="user.isLogin" @click="logout" color="black" class="rounded-pill">登出</VBtn>
 </VAppBar>
 <!-- 頁面內容 -->
 <VMain>
@@ -162,5 +162,12 @@ const logout = async () => {
   &:hover
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3)
 .box-shadow
-  box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 10%)
+  box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.1)
+
+.rounded-pill
+  &:hover
+    background-color: #F8BBD0
+    color: #fff !important
+.transparent-50
+  transparent: 50%
 </style>

@@ -23,7 +23,7 @@
       <div v-html="description" class="text-overflow"></div>
     </v-card-text>
     <v-card-actions>
-      <v-btn color="primary" prepend-icon="mdi-book-open-blank-variant" @click="addCart">
+      <v-btn color="primary" prepend-icon="mdi-book-open-blank-variant" :to="'/articles/' + _id">
         閱讀文章
       </v-btn>
       <v-btn class="text-caption">
