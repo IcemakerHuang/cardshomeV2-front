@@ -1,3 +1,6 @@
+// 這個檔案主要是設定 axios，一個用於發送 HTTP 請求的 JavaScript 函式庫。它建立了兩個 axios 實例：api 和 apiAuth，並設定了他們的基礎 URL 為環境變數 VITE_API。
+// 這個檔案的主要功能是管理與 API 的通訊，包括發送請求、處理回應，以及處理 token 過期的情況。
+
 import axios from 'axios'
 import { useUserStore } from '@/store/user'
 
